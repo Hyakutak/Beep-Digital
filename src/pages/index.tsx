@@ -1,7 +1,10 @@
 import { stripe } from "@/lib/stripe";
+import { MainContainer, CardProduct } from '@/styles/pages/index';
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import Stripe from "stripe";
+import { useKeenSlider } from 'keen-slider/react'
+import 'keen-slider/keen-slider.min.css'
 
 interface Product {
   id: string,
@@ -15,21 +18,27 @@ interface TypeProduct {
 }
 
 export default function Home({ products }: TypeProduct) {
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      perView: 2.8
+    }
+  })
+
   return (
     <>
-      <main>
+      <MainContainer ref={sliderRef} className="keen-slider">
         {products.map((product: Product) => {
           return (
-            <section key={product.id}>
+            <CardProduct key={product.id} className="keen-slider__slide">
               <Image src={product.imageUrl} width={520} height={480} alt=""/>
               <footer>
                 <h2>{ product.name }</h2>
                 <span>{ product.price }</span>
               </footer>
-            </section>
+            </CardProduct>
           );
         })}
-      </main>
+      </MainContainer>
     </>
   )
 }
