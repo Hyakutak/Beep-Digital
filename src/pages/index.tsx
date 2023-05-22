@@ -47,12 +47,11 @@ export const getStaticProps: GetStaticProps  = async () => {
   });
   
   const products = response.data.map((product) => {
-    const priceStripe = product.default_price as Stripe.Price;
-    const price = priceStripe.unit_amount ? priceStripe.unit_amount / 100 : 0;
+    const price = product.default_price as Stripe.Price;
     const formatPrice = new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
-    }).format(price);
+    }).format(price.unit_amount / 100);
 
     return {
       id: product.id,
