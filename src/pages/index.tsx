@@ -1,23 +1,23 @@
-import { stripe } from "@/lib/stripe";
-import { MainContainer, CardProduct } from '@/styles/pages/index';
-import { GetServerSideProps, GetStaticProps } from "next";
+import { stripe } from "../lib/stripe";
+import { MainContainer, CardProduct } from '../styles/pages/index';
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Stripe from "stripe";
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
+import Link from "next/link";
+import React from "react";
 
-interface Product {
-  id: string,
-  name: string,
-  imageUrl: string,
-  price: number
+interface TypeProducts {
+  products: {
+    id: string,
+    name: string,
+    imageUrl: string,
+    price: string
+  }[]
 }
 
-interface TypeProduct {
-  products: Product[]
-}
-
-export default function Home({ products }: TypeProduct) {
+export default function Home({ products }: TypeProducts) {
   const [sliderRef] = useKeenSlider({
     slides: {
       perView: 1.8
@@ -27,15 +27,17 @@ export default function Home({ products }: TypeProduct) {
   return (
     <>
       <MainContainer ref={sliderRef} className="keen-slider">
-        {products.map((product: Product) => {
+        {products.map((product) => {
           return (
-            <CardProduct key={product.id} className="keen-slider__slide">
-              <Image src={product.imageUrl} width={520} height={480} alt=""/>
-              <footer>
-                <h2>{ product.name }</h2>
-                <span>{ product.price }</span>
-              </footer>
-            </CardProduct>
+            <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
+              <CardProduct className="keen-slider__slide">
+                <Image src={product.imageUrl} width={520} height={480} alt=""/>
+                <footer>
+                  <h2>{ product.name }</h2>
+                  <span>{ product.price }</span>
+                </footer>
+              </CardProduct>
+            </Link>
           );
         })}
       </MainContainer>
