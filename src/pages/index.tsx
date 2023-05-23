@@ -1,6 +1,6 @@
 import { stripe } from "@/lib/stripe";
 import { MainContainer, CardProduct } from '@/styles/pages/index';
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Image from "next/image";
 import Stripe from "stripe";
 import { useKeenSlider } from 'keen-slider/react'
@@ -20,7 +20,7 @@ interface TypeProduct {
 export default function Home({ products }: TypeProduct) {
   const [sliderRef] = useKeenSlider({
     slides: {
-      perView: 2.8
+      perView: 1.8
     }
   })
 
@@ -43,26 +43,31 @@ export default function Home({ products }: TypeProduct) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await stripe.products.list({
     expand: ['data.default_price']
   });
   
   const products = response.data.map((product) => {
     const price = product.default_price as Stripe.Price;
+    const formatPrice = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(price.unit_amount / 100)
 
     return {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
-      price: price.unit_amount,
+      price: formatPrice,
     }
   });
 
   return {
     props: {
       products
-    }
+    },
+    revalidate: 60 * 60 / 2, // 2 hours
   }
 
 };

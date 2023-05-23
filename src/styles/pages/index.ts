@@ -21,6 +21,7 @@ export const CardProduct = styled('section', {
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
+    height: 656,
 
     img: {
         objectFit: 'cover'
