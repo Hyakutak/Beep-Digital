@@ -7,6 +7,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import Link from "next/link";
 import React from "react";
+import Head from "next/head";
 
 interface TypeProducts {
   products: {
@@ -26,6 +27,9 @@ export default function Home({ products }: TypeProducts) {
 
   return (
     <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
       <MainContainer ref={sliderRef} className="keen-slider">
         {products.map((product) => {
           return (
