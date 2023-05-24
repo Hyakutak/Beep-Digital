@@ -33,7 +33,7 @@ export default function Product({product}: ProductProps) {
             window.location.href = checkoutUrl;
         } catch (err) {
             setIsCreateCheckout(false);
-            alert('Falha')
+            alert('Falha');
         }
     }
     
@@ -85,14 +85,14 @@ export const getStaticProps: GetStaticProps<any, {id: string}> = async ({ params
 
     return {
         props: {
-        product:{
-            id: product.id,
-            name: product.name,
-            imageUrl: product.images[0],
-            price: formatPrice,
-            description: product.description,
-            defaultPriceId: price.id
-        }
+            product:{
+                id: product.id,
+                name: product.name,
+                imageUrl: product.images[0],
+                price: formatPrice,
+                description: product.description,
+                defaultPriceId: price.id
+            }
         },
         revalidate: (60 * 60) * 2 // 2 HOUR
     }
