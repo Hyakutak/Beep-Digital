@@ -1,4 +1,4 @@
-import { globalCss } from "./index";
+import { styled, globalCss } from '../../stitches.config';
 
 export const globalStyles = globalCss({
     '*': {
@@ -8,13 +8,19 @@ export const globalStyles = globalCss({
     },
 
     body: {
-        backgroundColor: '$gray900',
-        color: '$gray100',
+        backgroundColor: '$white',
+        color: '$gray800',
         '-webkit-font-smoothing': 'antialiased',
     },
 
     'body, input, textarea, button': {
-        fontFamily: 'Roboto',
-        fontWeight: 400,
+        fontFamily: '$default',
+        fontWeight: '$regular',
     },
+});
+
+export const Container = styled('section', {
+    width: 1220,
+    margin: '0 auto',
+    maxWidth: '100%'
 });
