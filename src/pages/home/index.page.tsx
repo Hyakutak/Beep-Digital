@@ -1,12 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { CaretLeft, CaretRight } from 'phosphor-react';
+import { CaretLeft, CaretRight, InstagramLogo } from 'phosphor-react';
 import { FullBanner } from './components/FullBanner';
 import {
     ContainerCentralBanner, 
     ContainerCollectionBanner, 
     FullBannerContainer, 
     HomeProductContainer, 
+    InstagramFeedContainer, 
     SlideNavigation, 
     SlideProductNavigation } from './styles';
 import { InfoBar } from './components/InfoBar';
@@ -17,6 +18,7 @@ import { CollectionBanners } from './components/CollectionBanners';
 import { BrandBanner } from './components/BrandBanner';
 import { VideoBanner } from './components/Video';
 import { ReviewStore } from './components/ReviewStore';
+import { InstagramFeed } from './components/InstagramFeed';
 
 import 'swiper/css';
 import 'swiper/css/bundle';
@@ -52,6 +54,12 @@ import CoverVideo from '@/assets/video/video.jpg';
 import Review1 from '@/assets/review/review1.jpg';
 import Review2 from '@/assets/review/review2.jpg';
 import Review3 from '@/assets/review/review3.jpg';
+
+import Instagram1 from '@/assets/instagram/instagram-1.jpg';
+import Instagram2 from '@/assets/instagram/instagram-2.jpg';
+import Instagram3 from '@/assets/instagram/instagram-3.jpg';
+import Instagram4 from '@/assets/instagram/instagram-4.jpg';
+import Instagram5 from '@/assets/instagram/instagram-5.jpg';
 
 export interface HomeProps {
     products: Product[];
@@ -209,6 +217,39 @@ export default function Home({ products }: HomeProps) {
         }
     ];
 
+    const InstagramBannerProps = [
+        {
+            id: uuidv4(),
+            name: '@befashion',
+            banner  : Instagram1
+        },
+        {
+            id: uuidv4(),
+            name: '@befashion',
+            banner: Instagram2
+        },
+        {
+            id: uuidv4(),
+            name: '@befashion',
+            banner: Instagram3
+        },
+        {
+            id: uuidv4(),
+            name: '@befashion',
+            banner: Instagram4
+        },
+        {
+            id: uuidv4(),
+            name: '@befashion',
+            banner: Instagram5
+        },
+        {
+            id: uuidv4(),
+            name: '@befashion',
+            banner: Instagram1
+        }
+    ];
+
     const fullBannerList = fullBannerProps.map((banner) => (
         <SwiperSlide key={banner.id}>
             <FullBanner {...banner} />
@@ -238,6 +279,12 @@ export default function Home({ products }: HomeProps) {
     const productsList = products.map((product) => (
         <SwiperSlide key={product.id}>
             <ProductCard {...product} />
+        </SwiperSlide>
+    ));
+
+    const instagramList = InstagramBannerProps.map((instagram) => (
+        <SwiperSlide key={instagram.id}>
+            <InstagramFeed {...instagram} />
         </SwiperSlide>
     ));
 
@@ -486,6 +533,33 @@ export default function Home({ products }: HomeProps) {
                     </Swiper>
                 </section>
             </HomeProductContainer>
+
+            {/* Instagram Feed */}
+            <InstagramFeedContainer>
+                <header>
+                    <InstagramLogo size={32} weight="light" />
+                    <h2><span>SIGA NOS NO INSTAGRAM</span> @befashion</h2>
+                </header>
+                <section>
+                    <Swiper
+                        spaceBetween={20}
+                        slidesPerView={1.5}
+                        grabCursor={true}
+                        breakpoints={{
+                            520: {
+                                slidesPerView: 2.3,
+                                spaceBetween: 10,
+                            },
+                            1024: {
+                            slidesPerView: 4.5,
+                            spaceBetween: 7,
+                            },
+                        }}
+                    >  
+                        { instagramList }
+                    </Swiper>
+                </section>
+            </InstagramFeedContainer>
         </>
     )
 }

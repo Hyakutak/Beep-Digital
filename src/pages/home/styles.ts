@@ -132,3 +132,47 @@ export const HomeProductContainer = styled(Container, {
         }
     }
 });
+
+export const InstagramFeedContainer = styled(Container, {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '$3',
+    header: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '$5',
+        
+
+        h2: {
+            color: '$blue',
+            fontSize: '$2xll',
+            fontWeight: '$regular',
+            textTransform: 'uppercase',
+            position: 'relative',
+
+            span: {
+                fontWeight: '$bold'
+            },
+
+            '&::after': {
+                content: '',
+                height: '0.3125rem',
+                width: '5.75rem',
+                background: '$blue',
+                borderRadius: '$basic',
+                position: 'absolute',
+                left: 0,
+                bottom: '-.5rem'
+            }
+        },
+
+        svg: {
+            background: '$blue',
+            color: '$white',
+            borderRadius: '$full',
+            padding: '$3',
+            width: '3.9375rem',
+            height: '3.9375rem'
+        }
+    }
+});

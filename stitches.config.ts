@@ -17,7 +17,8 @@ export const { styled, getCssText, globalCss } = createStitches({
             7: '1.75rem',
             8: '2rem',
             10: '2.5rem',
-            11: '0.625rem'
+            11: '0.625rem',
+            12: '1.875rem'
         },
 
         fontSizes: {
@@ -28,6 +29,7 @@ export const { styled, getCssText, globalCss } = createStitches({
             lg: '1.125rem',
             xl: '1.25rem',
             '2xl': '1.5rem',
+            '2xll': '2rem',
             '2xxl': '2.5rem',
         },
 
