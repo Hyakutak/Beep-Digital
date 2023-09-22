@@ -1,13 +1,25 @@
-import Image from 'next/image';
-import { HeaderContainer, HeaderCountCartItems, HeaderIcons, HeaderInput, HeaderWrapper } from './styles';
-import logoImage from '@/assets/logo/logo.png';
-import { MagnifyingGlass, User, Phone, ShoppingCart } from 'phosphor-react';
+import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { HeaderContainer, HeaderCountCartItems, HeaderHamburguer, HeaderIcons, HeaderInput, HeaderWrapper } from './styles';
+import logoImage from '@/assets/logo/logo.png';
+import { MagnifyingGlass, User, Phone, ShoppingCart, X, List } from 'phosphor-react';
+
 
 export function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
     return (
         <HeaderWrapper>
             <HeaderContainer>
+            <HeaderHamburguer onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                {isMenuOpen ? 
+                    <X className='close' size={24} weight="bold" />
+                    :
+                    <List size={24} weight="bold" />
+                }
+            </HeaderHamburguer>
                 <Image src={logoImage} alt='Logo' width={175} height={60}/>
                 <HeaderInput>
                     <input type="search" name="search" id="search" placeholder="Digite aqui o que você procura…" />

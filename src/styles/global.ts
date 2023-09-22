@@ -17,6 +17,12 @@ export const globalStyles = globalCss({
         fontFamily: '$default',
         fontWeight: '$regular',
     },
+
+    '@tablet': {
+        html:{
+            fontSize: '87.5%',
+        }
+    }
 });
 
 export const Container = styled('section', {

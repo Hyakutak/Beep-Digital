@@ -99,6 +99,8 @@ export const HeaderIcons = styled('div', {
                 width: '7.4375rem',
                 maxWidth: '7.4375rem'
             }
+
+            
         }
     }
 });
@@ -113,4 +115,23 @@ export const HeaderCountCartItems = styled('section', {
     color: '$gray800',
     fontSize: '$xxs',
     padding: '.05rem .15rem'
+});
+
+export const HeaderHamburguer = styled('div',{
+    display: 'none',
+    cursor: 'pointer',
+
+    svg: {
+        color: '$blue',
+    },
+
+    '& .close':{
+        position: 'absolute',
+        top: 0,
+        right: '$4',
+        zIndex: 101,  
+    },
+    '@tablet': {
+        display: 'block',
+    }, 
 });
