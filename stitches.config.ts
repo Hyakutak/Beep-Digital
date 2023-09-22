@@ -18,18 +18,22 @@ export const { styled, getCssText, globalCss } = createStitches({
             8: '2rem',
             10: '2.5rem',
             11: '0.625rem',
-            12: '1.875rem'
+            12: '1.875rem',
+            13: '3rem'
         },
 
         fontSizes: {
             xxs: '.625rem',
             xs: '0.75rem',
+            ssm: '.75rem',
             sm: '0.875rem',
+            smd: '0.9375rem',
             md: '1rem',
             lg: '1.125rem',
             xl: '1.25rem',
             '2xl': '1.5rem',
             '2xll': '2rem',
+            '2xxll': '1.875rem',
             '2xxl': '2.5rem',
         },
 
@@ -43,6 +47,7 @@ export const { styled, getCssText, globalCss } = createStitches({
         },
 
         lineHeights: {
+            regular: '100%',
             base: '160%',
         },
 
@@ -59,6 +64,7 @@ export const { styled, getCssText, globalCss } = createStitches({
             gray700: '#707070',
             gray800: '#828282',
             gray900: '#E9E9E9',
+            grayF: '#AFAFAF',
 
             black: '#000',
             black200: '#3A3A3A',
