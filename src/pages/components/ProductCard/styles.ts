@@ -97,7 +97,11 @@ export const WishlistCard = styled('div', {
     background: '$grayB',
     display: 'flex',
     alignItems: 'center',
-    visibility: 'hidden'
+    visibility: 'hidden',
+
+    '@tablet': {
+        visibility: 'visible'
+    }
 });
 
 export const ActionsContainer = styled('section', {
@@ -106,6 +110,10 @@ export const ActionsContainer = styled('section', {
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: '1.25rem',
+
+    '@mobileL': {
+        visibility: 'visible'
+    },
 
     button: {
         all: 'unset',

@@ -18,6 +18,14 @@ export const FooterWrapper = styled(Container, {
         justifyContent: 'space-between',
         position: 'relative',
 
+        '@mobileL': {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '$4',
+            justifyContent: 'center',
+            padding: '0 0'
+        },
+
         '&:last-child': {
             '&::before': {
                 content: '',
@@ -144,6 +152,11 @@ export const FooterMoreBeEnxoval = styled('div', {
     gap: '$8 !important',
     maxWidth: '23rem',
 
+    '@mobileL': {
+        textAlign: 'center !important',
+        alignItems: 'center'
+    },
+
     span: {
         color: '$gray700',
         fontSize: '$ssm'
@@ -177,6 +190,13 @@ export const SubFooterContainer = styled(Container, {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+
+    '@mobileL': {
+        flexDirection: 'column',
+        textAlign: 'center',
+        padding: '$2',
+        gap: '$2'
+    },
 
     span: {
         color: '$gray600',

@@ -1,10 +1,7 @@
-export function isMobile(): boolean {
-    if (typeof window === 'undefined') {
-        // Verifica se estamos no lado do servidor (SSR)
-        return false;
-    }
+import { useMediaQuery } from 'react-responsive';
 
-    const mobileScreenWidth = 768;
+export function isMobile(): boolean {
+    const mobileScreenWidth = useMediaQuery({ maxWidth: 767 });
   
-    return window.innerWidth < mobileScreenWidth;
+    return mobileScreenWidth;
 }

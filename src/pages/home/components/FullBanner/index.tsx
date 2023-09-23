@@ -13,11 +13,12 @@ interface FullBannerProps {
 
 export function FullBanner({ name, link, bannerDesktop, bannerMobile }: FullBannerProps) {
     const isOnMobile = isMobile();
+    
     return (
         <FullBannerContainer>
             <Link href={link}>
                 {isOnMobile ? (
-                    <Image src={bannerMobile} alt={name} width={bannerMobile.width} height={bannerMobile.height} />
+                        <Image src={bannerMobile} alt={name} width={bannerMobile.width} height={bannerMobile.height} />
                     ) : (
                         <Image src={bannerDesktop} alt={name} width={bannerDesktop.width} height={bannerDesktop.height} />
                     )

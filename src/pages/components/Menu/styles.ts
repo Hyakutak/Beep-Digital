@@ -58,5 +58,10 @@ export const NavWrapper = styled('nav', {
                 },
             }
         }
-    }
+    },
+
+    '@tablet': {
+        position: 'fixed',
+        visibility: 'hidden'
+    }, 
 });

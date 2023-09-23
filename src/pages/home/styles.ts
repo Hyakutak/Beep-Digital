@@ -43,12 +43,20 @@ export const SlideNavigation = styled('section', {
 
     '.prev': {
         position: 'absolute',
-        left: '-4rem'
+        left: '-4rem',
+
+        '@tablet': {
+            left: '0'
+        }
     },
 
     '.next': {
         position: 'absolute',
-        right: '-4rem'
+        right: '-4rem',
+
+        '@tablet': {
+            right: '0'
+        }
     },
 
     '.swiper-button': {
@@ -69,13 +77,23 @@ export const SlideNavigation = styled('section', {
 export const ContainerCentralBanner = styled(Container, {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '$4'
+    gap: '$4',
+
+    '@mobileL': {
+        display: 'flex',
+        flexDirection: 'column'
+    }
 });
 
 export const ContainerCollectionBanner = styled(Container, {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '$3'
+    gap: '$3',
+
+    '@mobileL': {
+        display: 'flex',
+        flexDirection: 'column'
+    }
 });
 
 export const HomeProductContainer = styled(Container, {
@@ -94,6 +112,10 @@ export const HomeProductContainer = styled(Container, {
         height: 'fit-content',
         width: 'fit-content !important',
 
+        '@tablet': {
+            top: '5rem !important',
+        },
+
         '.swiper-pagination-bullet': {
             width: '.75rem',
             height: '.75rem',
@@ -107,10 +129,14 @@ export const HomeProductContainer = styled(Container, {
 
     '> h2': {
         color: '$blue',
-        fontSize: '1.875rem',
+        fontSize: '$2xxll',
         fontWeight: '$bold',
         textTransform: 'uppercase',
         position: 'relative',
+
+        '@tablet': {
+            fontSize: '$2xl'
+        },
 
         '&::after': {
             content: '',
@@ -137,6 +163,11 @@ export const InstagramFeedContainer = styled(Container, {
     display: 'flex',
     flexDirection: 'column',
     gap: '$3',
+
+    '@tablet': {
+        padding: '$2'
+    },
+
     header: {
         display: 'inline-flex',
         alignItems: 'center',
@@ -149,6 +180,10 @@ export const InstagramFeedContainer = styled(Container, {
             fontWeight: '$regular',
             textTransform: 'uppercase',
             position: 'relative',
+
+            '@tablet': {
+                fontSize: '$2xl',
+            },
 
             span: {
                 fontWeight: '$bold'
@@ -172,7 +207,12 @@ export const InstagramFeedContainer = styled(Container, {
             borderRadius: '$full',
             padding: '$3',
             width: '3.9375rem',
-            height: '3.9375rem'
+            height: '3.9375rem',
+
+            '@tablet': {
+                width: '3.5rem',
+                height: '3.25rem'
+            }
         }
     }
 });

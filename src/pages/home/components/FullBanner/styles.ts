@@ -4,6 +4,14 @@ export const FullBannerContainer = styled('section',{
     paddingTop: '30%', 
     position: 'relative',
     overflow: 'hidden',
+
+    '@tablet': {
+        paddingTop: '50%',
+    },
+
+    '@mobileL': {
+        paddingTop: '85%',
+    },
   
     img:{
         position: 'absolute',

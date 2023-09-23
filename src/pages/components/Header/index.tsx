@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { HeaderContainer, HeaderCountCartItems, HeaderHamburguer, HeaderIcons, HeaderInput, HeaderWrapper } from './styles';
 import logoImage from '@/assets/logo/logo.png';
 import { MagnifyingGlass, User, Phone, ShoppingCart, X, List } from 'phosphor-react';
+import { Menu } from '../Menu';
 
 
 export function Header() {
@@ -13,17 +14,20 @@ export function Header() {
     return (
         <HeaderWrapper>
             <HeaderContainer>
-            <HeaderHamburguer onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? 
-                    <X className='close' size={24} weight="bold" />
-                    :
-                    <List size={24} weight="bold" />
-                }
-            </HeaderHamburguer>
+                <HeaderHamburguer onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen ? 
+                        <X className='close' size={24} weight="bold" />
+                        :
+                        <List size={24} weight="bold" />
+                    }
+                </HeaderHamburguer>
+                <div className={`${isMenuOpen ? 'active' : 'no-active'}`}>
+                    <Menu />
+                </div>
                 <Image src={logoImage} alt='Logo' width={175} height={60}/>
                 <HeaderInput>
-                    <input type="search" name="search" id="search" placeholder="Digite aqui o que você procura…" />
-                    <MagnifyingGlass size={23} weight="light" />
+                    <input className={`${isSearchOpen ? 'active' : ''}`} type="search" name="search" id="search" placeholder="Digite aqui o que você procura…" />
+                    <MagnifyingGlass size={23} weight="light" onClick={() => setIsSearchOpen (!isSearchOpen )} />
                 </HeaderInput>
                 <HeaderIcons>
                     <Link href="/" >

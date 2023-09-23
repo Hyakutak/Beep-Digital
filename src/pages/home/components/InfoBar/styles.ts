@@ -7,6 +7,26 @@ export const InfoBarContainer = styled(Container, {
     padding: '$10 0',
     position: 'relative',
 
+    '@tablet': {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '$4',
+        padding: '$3 0',
+        
+        '> section': {
+            justifyContent: 'center',
+            '&::after': {
+                display: 'none'
+            }
+        }
+    },
+
+    '@mobileL': {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+    },
+
     section: {
         display: 'flex',
         alignItems: 'center',

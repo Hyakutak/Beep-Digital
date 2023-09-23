@@ -26,7 +26,11 @@ export const globalStyles = globalCss({
 });
 
 export const Container = styled('section', {
-    width: 1220,
+    width: '1220px',
     margin: '0 auto',
-    maxWidth: '100%'
+    maxWidth: '100%',
+    '@tablet': {
+        width: '100%',
+        padding: '0 $4'
+    }
 });

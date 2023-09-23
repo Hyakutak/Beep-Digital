@@ -60,6 +60,7 @@ import Instagram2 from '@/assets/instagram/instagram-2.jpg';
 import Instagram3 from '@/assets/instagram/instagram-3.jpg';
 import Instagram4 from '@/assets/instagram/instagram-4.jpg';
 import Instagram5 from '@/assets/instagram/instagram-5.jpg';
+import { isMobile } from '@/utils/isMobile';
 
 export interface HomeProps {
     products: Product[];
@@ -68,6 +69,8 @@ export interface HomeProps {
 register();
 
 export default function Home({ products }: HomeProps) {
+    const isOnMobile = isMobile();
+
     const fullBannerProps = [
         {
             id: uuidv4(),

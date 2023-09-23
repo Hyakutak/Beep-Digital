@@ -12,9 +12,13 @@ export const NewsletterContainer = styled(Container, {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '$5 0',
-   
 
-    header: {
+    '@mobileL': {
+        flexDirection: 'column',
+        gap: '$3',
+    },
+
+    '> header': {
         display: 'flex',
         alignItems: 'center',
         gap: '$5',
@@ -24,7 +28,11 @@ export const NewsletterContainer = styled(Container, {
             fontWeight: '$bold',
             color: '$blue',
             textTransform: 'uppercase',
-            lineHeight: '$regular'
+            lineHeight: '$regular',
+
+            '@tablet': {
+                fontSize: '$2xl'
+            }
         },
 
         span: {
@@ -48,6 +56,10 @@ export const NewsletterContainer = styled(Container, {
             fontSize: '$sm',
             fontWeight: '$medium',
             color: '$gray',
+
+            '@tablet': {
+                width: 'fit-content'
+            },
 
             '&::placeholder': {
                 fontSize: '$sm',

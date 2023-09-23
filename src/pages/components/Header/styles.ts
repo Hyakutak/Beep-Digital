@@ -13,7 +13,39 @@ export const HeaderWrapper = styled('header', {
 export const HeaderContainer = styled(Container, {
     display: 'flex',
     alignItems: 'center',
-    gap: '$7'
+    gap: '$7',
+
+    '@tablet': {
+        justifyContent: 'space-between'
+    },
+
+    '@mobileL': {
+        gap: '$2'
+    },
+
+    '.no-active': {
+        display: 'none'
+    },
+
+    '.active': {
+        zIndex: 2,
+        
+        '> nav': {
+            background: '$white',
+            visibility: 'visible',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+
+            ul: {
+                flexDirection: 'column',
+                gap: '$6',
+                alignItems: 'start',
+                padding: '$4'
+            }
+        }
+    }
 });
 
 export const HeaderInput = styled('div', {
@@ -33,6 +65,22 @@ export const HeaderInput = styled('div', {
         }
     },
 
+    '@mobileL': {
+        width: 'fit-content',
+        flex: 'unset',
+        '.active': {
+            position: 'absolute',
+            display: 'block',
+            visibility: 'visible',
+            bottom: '-4rem',
+            background: '$white',
+            padding: '$4',
+            left: '5%',
+            width: '80%',
+            borderRadius: '$basic'
+        }
+    },
+
     input: {
         all: 'unset',
         color: '$gray',
@@ -41,6 +89,11 @@ export const HeaderInput = styled('div', {
         textTransform: 'uppercase',
         width: 'calc(100% - 23px)',
         cursor: 'pointer',
+
+        '@mobileL': {
+            visibility: 'hidden',
+            display: 'none'
+        },
 
         '&::placeholder': {
             color: '$gray'
@@ -57,11 +110,22 @@ export const HeaderIcons = styled('div', {
     alignItems: 'center',
     gap: '$8',
 
+    '@mobileL': {
+        gap: '$2'
+    },
+
     a: {
         all: 'unset',
         display: 'inline-flex',
         alignItems: 'center',
         gap: '$2',
+        cursor: 'pointer',
+
+        '&:hover': {
+            div: {
+                color: '$blue'
+            }
+        },
 
         svg: {
             backgroundColor: '$blue',
@@ -87,9 +151,10 @@ export const HeaderIcons = styled('div', {
             textTransform: 'uppercase',
             cursor: 'pointer',
 
-            '&:hover': {
-                color: '$blue'
-            },
+            '@tablet': {
+                display: 'none',
+                zIndex: 2
+            }, 
 
             span: {
                 fontWeight: '$bold'

@@ -4,6 +4,11 @@ export const CentralBannerImage = styled('section', {
     paddingTop: '72%',
     position: 'relative',
     width: '100%',
+
+    '@mobileL': {
+        paddingTop: '45%'
+    },
+
     img: {
         position: 'absolute',
         top: 0,
@@ -23,6 +28,8 @@ export const CentralBannerText = styled('header', {
     flexDirection: 'column',
     alignItems: 'end',
     gap: '$6',
+
+    
 
     h3: {
         color: '$white',
@@ -44,5 +51,36 @@ export const CentralBannerText = styled('header', {
         '&:hover': {
             background: '$orange'
         }
-    }
+    },
+
+    '@tablet': {
+        top: '6rem',
+        right: '2rem',
+
+        '> h3': {
+            fontSize: '$lg'
+        },
+
+        '> span': {
+            padding: '$2 $5'
+        }
+    },
+
+    '@mobileL': {
+        top: '12rem',
+        left: '50%',
+        transform: 'translateX(-50%)',
+
+        '> h3': {
+            fontSize: '$2xl'
+        },
+
+        '> span': {
+            padding: '$2 $5'
+        }
+    },
+
+    '@mobile': {
+        top: '5rem',
+    },
 });
