@@ -6,6 +6,15 @@ export const VideoContainer = styled(Container, {
     position: 'relative',
     overflow: 'hidden',
     borderRadius: '$basic',
+
+    '@tablet': {
+        paddingTop: '50%',
+        margin: '0 $2'
+    },
+
+    '@mobileL': {
+        paddingTop: '75%',
+    },
   
     '> img':{
         position: 'absolute',

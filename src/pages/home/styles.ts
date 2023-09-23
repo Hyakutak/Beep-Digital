@@ -103,6 +103,10 @@ export const HomeProductContainer = styled(Container, {
     padding: '3rem 0',
     position: 'relative',
 
+    '@tablet': {
+        padding: '$3'
+    },
+
     '.dots': {
         position: 'absolute',
         zIndex: 2,
@@ -113,7 +117,11 @@ export const HomeProductContainer = styled(Container, {
         width: 'fit-content !important',
 
         '@tablet': {
-            top: '5rem !important',
+            top: '2rem !important',
+        },
+
+        '@mobile': {
+            top: '1rem !important',
         },
 
         '.swiper-pagination-bullet': {

@@ -385,7 +385,7 @@ export default function Home({ products }: HomeProps) {
                 <section>
                     <Swiper
                         spaceBetween={16}
-                        slidesPerView={1.5}
+                        slidesPerView={3}
                         grabCursor={true}
                         navigation={{
                             nextEl: ".swiper-button.next.brand",
@@ -396,13 +396,13 @@ export default function Home({ products }: HomeProps) {
                             el: '.dots.dots-brand'
                         }}
                         breakpoints={{
-                            520: {
-                                slidesPerView: 2.3,
+                            768: {
+                                slidesPerView: 3,
                                 spaceBetween: 10,
                             },
                             1024: {
-                            slidesPerView: 6,
-                            spaceBetween: 7,
+                                slidesPerView: 6,
+                                spaceBetween: 7,
                             },
                         }}
                     >  
