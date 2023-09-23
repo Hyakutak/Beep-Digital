@@ -9,6 +9,12 @@ export const CentralBannerImage = styled('section', {
         paddingTop: '45%'
     },
 
+    '&:hover': {
+        'span': {
+            background: '$orange'
+        }
+    },
+
     img: {
         position: 'absolute',
         top: 0,
@@ -29,8 +35,6 @@ export const CentralBannerText = styled('header', {
     alignItems: 'end',
     gap: '$6',
 
-    
-
     h3: {
         color: '$white',
         fontWeight: '$bold',
@@ -46,11 +50,7 @@ export const CentralBannerText = styled('header', {
         textTransform: 'uppercase',
         padding: '$3 $10',
         borderRadius: '$small',
-        width: 'fit-content',
-
-        '&:hover': {
-            background: '$orange'
-        }
+        width: 'fit-content'
     },
 
     '@tablet': {
