@@ -34,7 +34,7 @@ import FullBannerMobile1 from '@/assets/full-banners/mobile/fbmobile01.jpg';
 import FullBannerMobile2 from '@/assets/full-banners/mobile/fbmobile03.jpg';
 import FullBannerMobile3 from '@/assets/full-banners/mobile/fbmobile03.jpg';
 
-import CentralBanner1 from '@/assets/central-banners/jogo-de-cama.jpg';
+import CentralBanner1 from '@/assets/central-banners/jogo-de-cama.png';
 import CentralBanner2 from '@/assets/central-banners/toalha-de-mesa.jpg';
 import CentralBanner3 from '@/assets/central-banners/jogo-de-cama-2.jpg';
 
@@ -59,7 +59,7 @@ import Instagram1 from '@/assets/instagram/instagram-1.jpg';
 import Instagram2 from '@/assets/instagram/instagram-2.jpg';
 import Instagram3 from '@/assets/instagram/instagram-3.jpg';
 import Instagram4 from '@/assets/instagram/instagram-4.jpg';
-import Instagram5 from '@/assets/instagram/instagram-5.jpg';
+import Instagram5 from '@/assets/instagram/instagram-5.png';
 import { isMobile } from '@/utils/isMobile';
 
 export interface HomeProps {
