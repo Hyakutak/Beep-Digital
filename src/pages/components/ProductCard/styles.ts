@@ -163,6 +163,10 @@ export const ActionQuantidy = styled('div', {
         }
     },
 
+    'input[type=number]': {
+        '-moz-appearance': 'textfield'
+    },
+
     svg: {
         color: '$blue',
         position: 'absolute',
