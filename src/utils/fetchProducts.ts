@@ -1,5 +1,6 @@
 import { stripe } from '@/lib/stripe';
 import Stripe from 'stripe';
+import { convertNumberToPrice } from './formatPriceMoney';
 
 export async function fetchProducts() {
     const response = await stripe.products.list({
@@ -9,7 +10,7 @@ export async function fetchProducts() {
     const products = response.data.map((product) => {
         const priceStripe = product.default_price as Stripe.Price;
         const price = priceStripe.unit_amount ? priceStripe.unit_amount / 100 : 0;
-        const formatPrice =  price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        const formatPrice = convertNumberToPrice(price);
 
         return {
             id: product.id,
